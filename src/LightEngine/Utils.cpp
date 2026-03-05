@@ -40,8 +40,6 @@ namespace Utils
 	{
 		std::random_device rd;
 		std::mt19937 gen(rd());
-		std::random_device rd;
-		std::mt19937 gen(rd());
 		std::uniform_int_distribution<int> dist(_min, _max);
 		return dist(gen);
 	}
