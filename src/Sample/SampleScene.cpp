@@ -1,8 +1,13 @@
 #include "SampleScene.h"
-
 #include "DummyEntity.h"
-
 #include "Debug.h"
+#include "InputManager.h"
+#include <iostream>
+
+#define MAX_JOYSTICK_POS  100
+#define MIN_JOYSTICK_POS -100
+
+
 
 void SampleScene::OnInitialize()
 {
@@ -19,6 +24,39 @@ void SampleScene::OnInitialize()
 
 void SampleScene::OnEvent(const sf::Event& event)
 {
+	InputManager& IM = InputManager::Get();
+
+	//if (IM.IsKeyPressed(sf::Keyboard::A))
+	//{
+	//	std::cout << "A pressed" << std::endl;
+	//}
+	//if (IM.IskeyReleased(sf::Keyboard::A))
+	//{
+	//	std::cout << "A released" << std::endl;
+	//}
+	//if (IM.IsKeyHeld(sf::Keyboard::A))
+	//{
+	//	std::cout << "A held" << std::endl;
+	//}
+
+	//if (IM.IsControllerPressed(0))
+	//	std::cout << "Controller Pressed" << std::endl;
+	//
+	//if (IM.IsControllerHeld(0))
+	//	std::cout << "Controller Held" << std::endl;
+
+	//if (IM.IsControllerReleased(0))
+	//	std::cout << "Controller Release" << std::endl;
+
+	/*if (IM.GetJoystickLeftX() >= MAX_JOYSTICK_POS)
+		std::cout << "Right" << std::endl;*/
+	
+	std::cout << IM.GetJoystickLeftX(0) << std::endl;
+
+	if (IM.IsControllerPressed(0,Controller::Button::A))
+		std::cout << "Pressed A" << std::endl;
+
+
 	if (event.type != sf::Event::EventType::MouseButtonPressed)
 		return;
 
