@@ -1,6 +1,7 @@
 #include "Button.h"
 #include <iostream>
 #include "InputManager.h"
+
 void Button::UpdateEvent(const sf::Event& _event)
 {
 	if (_event.type == sf::Event::MouseMoved)

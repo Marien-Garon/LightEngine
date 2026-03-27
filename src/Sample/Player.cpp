@@ -242,7 +242,7 @@ void Player::OnUpdate()
 	if (GetScene<SampleScene>()->mIsPaused)
 		return;
 
-	if (!m_isJumping && !mIsGravity)
+	if (!mIsGravity)
 		StartGravity(0.f);
 
 	if (!isAttackingTimingGood)
@@ -257,8 +257,9 @@ void Player::OnUpdate()
 
 	SetDirection(0, 0);
 	
-
+#ifdef _DEBUG
 	Debug::DrawText(GetPosition().x, GetPosition().y - 50, StateToStr(), 0.5f, 0.5f, sf::Color::White);
+#endif // _DEBUG
 
 	m_stateMachine.Update(this, GetDeltaTime());
 
@@ -267,9 +268,11 @@ void Player::OnUpdate()
 
 	if (m_resetBombo && !isAttackingTimingGood)
 		m_numberOfGoodPress = 0;
-	
+
+#ifdef _DEBUG
 	std::cout << mDirection.x << "/" << mDirection.y << std::endl;
 	std::cout << m_collider.x << "/" << m_collider.y << std::endl;
+#endif
 }
 
 void Player::OnCollision(Entity* collidedWith)
