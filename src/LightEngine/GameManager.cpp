@@ -97,19 +97,13 @@ void GameManager::Run()
 		CreateWindow(1280, 720, "Default window");
 	}
 
-	//sf::View view2(sf::Vector2f(mWindowWidth / 2 , mWindowHeight / 2), sf::Vector2f(mWindowWidth  , mWindowHeight));
-	//mCamera = &view2;
-
 	//#TODO : Load somewhere else
-	bool fontLoaded = mFont.loadFromFile("../../../res/Hack-Regular.ttf");
+	bool fontLoaded = mFont.loadFromFile("../../../assets/fonts/Hack-Regular.ttf");
 	_ASSERT(fontLoaded);
 
 	_ASSERT(mpScene != nullptr);
 
 	InputManager::Get().Init();
-
-	//AssetManager::getInstance().PlayMusic("Fight");
-	//AssetManager::getInstance().SetMusicVolume(0.f);
 
 
 	sf::Clock clock;

@@ -1,0 +1,18 @@
+{
+    "Data": [],
+    "Tiles": [
+        {
+            "Type": "TileBlocks",
+            "id": "wall_red6_middle",
+            "position": {
+                "x": 512.0,
+                "y": 192.0
+            },
+            "scale": {
+                "height": 0.4984423816204071,
+                "width": 0.5265082120895386
+            },
+            "tag": 10
+        }
+    ]
+}

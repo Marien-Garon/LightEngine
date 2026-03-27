@@ -16,7 +16,7 @@
 
 std::vector<Entity*> LevelEditor::LoadLevel(Scene* scene, std::string _id)
 {
-	std::filesystem::path levelPath = "../../../level/" + _id;
+	std::filesystem::path levelPath = "../../../assets/level/" + _id;
 	if (levelPath.extension() != ".json") levelPath += ".json";
 
 	if (!std::filesystem::exists(levelPath))
@@ -130,13 +130,13 @@ void LevelEditor::SaveLevel()
 		return;
 	}
 
-	std::filesystem::path filePath = "../../../level/Level0.json";
+	std::filesystem::path filePath = "../../../assets/level/Level0.json";
 
 	int i = 0;
 	while (std::filesystem::exists(filePath))
 	{
 		i++;
-		filePath = "../../../level/Level" + std::to_string(i) + ".json";
+		filePath = "../../../assets/level/Level" + std::to_string(i) + ".json";
 	}
 
 

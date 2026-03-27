@@ -13,25 +13,30 @@ int main()
 
 	pInstance->CreateWindow(1280, 720, "HyperBlast: The Key-Star!", 60, {0,0,0}, false);
 
-	SceneManager& sm = SceneManager::getInstance();
+	bool LaunchLevelEditor = true;
 
-	MenuScene menuScene;
-	SampleScene sampleScene;
-	PauseScene pauseScene;
-	DeathScene deathScene;
+	if (LaunchLevelEditor)
+		pInstance->LaunchScene<LevelEditor>();
+	else
+	{
+		SceneManager& sm = SceneManager::getInstance();
+
+		MenuScene menuScene;
+		SampleScene sampleScene;
+		PauseScene pauseScene;
+		DeathScene deathScene;
 
 
-	sm.AddScene("START", &menuScene);
-	sm.AddScene("LEVEL", &sampleScene);
-	sm.AddScene("PAUSE", &pauseScene);
-	sm.AddScene("DEATH", &deathScene);
+		sm.AddScene("START", &menuScene);
+		sm.AddScene("LEVEL", &sampleScene);
+		sm.AddScene("PAUSE", &pauseScene);
+		sm.AddScene("DEATH", &deathScene);
 
-	sm.SetStartScene("START");
+		sm.SetStartScene("START");
 
-	pInstance->SetScene(sm.GetCurrentScene());
-	pInstance->Run();
-
-	//bool LaunchLevelEditor = false;
+		pInstance->SetScene(sm.GetCurrentScene());
+		pInstance->Run();
+	}
 
 	//if (LaunchLevelEditor)
 	//	pInstance->LaunchScene<LevelEditor>();
