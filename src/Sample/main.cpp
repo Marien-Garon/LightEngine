@@ -26,7 +26,6 @@ int main()
 		PauseScene pauseScene;
 		DeathScene deathScene;
 
-
 		sm.AddScene("START", &menuScene);
 		sm.AddScene("LEVEL", &sampleScene);
 		sm.AddScene("PAUSE", &pauseScene);
