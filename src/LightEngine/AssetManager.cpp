@@ -315,9 +315,6 @@ bool AssetManager::InitTextureInDirectory(const std::filesystem::path& filename)
                 a.line = anim["line"];
                 a.frameNbr = anim["frameNbr"];
                 a.duration = anim["duration"];
-
-                //for (auto frame : anim["frames"])
-                //    a.frames.push_back(frame);
             }
         }
 
@@ -453,11 +450,6 @@ sf::Sprite* AssetManager::LoadSprite(std::string _id, int _posX, int _posY, int 
         break;
     }
 
-    //if (_w == 0) _w = isTile ? m_tileList[_id].sizeW : m_textureList[_id].sizeW;
-    //if (_h == 0) _h = isTile ? m_tileList[_id].sizeH : m_textureList[_id].sizeH;
-
-    //sf::Texture& texture = isTile ? m_tileList[_id].texture : m_textureList[_id].texture;
-
     return texture ? new sf::Sprite(*texture, sf::IntRect(_posX, _posY, _w, _h)) : nullptr;
 }
 
@@ -546,10 +538,6 @@ SpriteData::SpriteData(std::string _id, int _posX, int _posY, int _w, int _h, Sp
         break;
     }
 
-    //if(isTile)
-    //    data = AssetManager::getInstance().GetTileData(_id);
-    //else
-    //    data = AssetManager::getInstance().GetTextureData(_id);
     textureID = _id;
     sprite = AssetManager::getInstance().LoadSprite(_id, _posX, _posY, _w, _h, _type);
 }
