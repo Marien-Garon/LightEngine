@@ -22,7 +22,6 @@ void Companion::OnInitialize()
 
 void Companion::OnCollision(Entity* other)
 {
-	/*std::cout << "Companion::OnCollision" << std::endl;*/
 }
 
 void Companion::Follow()
