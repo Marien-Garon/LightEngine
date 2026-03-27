@@ -294,8 +294,6 @@ void LevelEditor::DrawGrid()
 
 void LevelEditor::InitEntity()
 {
-	//m_entityToPlace.push_back(CreateEntity<BreakablePlatform>(120, 60, sf::Color::Cyan));
-
 	AssetManager& AM = AssetManager::getInstance();
 
 	BreakablePlatform* platform = CreateEntity<BreakablePlatform>(AM.CreateSprite("breakable", 0, 0, 493, 440));
@@ -497,9 +495,6 @@ void LevelEditor::OnEvent(const sf::Event& event)
 						std::remove(m_gridList[currentGrid].begin(), m_gridList[currentGrid].end(), tile),  //Really the guy who invented std::remove & remove_if go fuck yourself i never understand how the fuck does it works it's dark magic at this level
 						m_gridList[currentGrid].end());
 
-					//m_posedBlock.erase(
-					//	std::remove(m_posedBlock.begin(), m_posedBlock.end(), tile),  //Really the guy who invented std::remove & remove_if go fuck yourself i never understand how the fuck does it works it's dark magic at this level
-					//	m_posedBlock.end());
 					Debug::DebugMessage(Debug::Severity::DEBUG, "Tile", "Deleted Tile");
 					if (tile->entity == pEntitySelected) pEntitySelected = nullptr;
 					return;
@@ -554,7 +549,6 @@ void LevelEditor::CreateEntityCopy(Entity* _entity, int _x, int _y)
 {
 	Entity* newEntity = _entity->Clone();
 	newEntity->SetPosition(_x, _y, 0.0f, 0.0f);
-	//m_posedBlock.push_back(newEntity);
 
 	m_gridList[currentGrid].push_back(new SavedEntity(newEntity, newEntity->GetPosition(0.0f, 0.0f)));
 }
