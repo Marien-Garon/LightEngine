@@ -217,20 +217,20 @@ void SampleScene::SetPause()
 	mCamera->SetSpeed(0.f);
 
 	AssetManager& AM = AssetManager::getInstance();
-	m_pauseMenu = CreateEntity<Entity>(AM.LoadSprite("pause"), sf::Color::Transparent);
-	m_pauseMenu->SetSpriteScale(1, 1);
+	m_pauseMenu = CreateEntity<Entity>(AM.CreateSprite("pause"));
+	m_pauseMenu->SetScale(1, 1);
 
-	m_buttonContinue = CreateEntity<Button>(AM.LoadSprite("boutoncontinue"), sf::Color::Transparent);
-	m_buttonContinue->SetSpriteScale(0.9, 0.9);
+	m_buttonContinue = CreateEntity<Button>(AM.CreateSprite("boutoncontinue"));
+	m_buttonContinue->SetScale(0.9, 0.9);
 
-	m_buttonRestart = CreateEntity<Button>(AM.LoadSprite("boutonrestart"), sf::Color::Transparent);
-	m_buttonRestart->SetSpriteScale(0.9, 0.9);
+	m_buttonRestart = CreateEntity<Button>(AM.CreateSprite("boutonrestart"));
+	m_buttonRestart->SetScale(0.9, 0.9);
 
-	m_buttonSettings = CreateEntity<Button>(AM.LoadSprite("boutonsettings"), sf::Color::Transparent);
-	m_buttonSettings->SetSpriteScale(0.9, 0.9);
+	m_buttonSettings = CreateEntity<Button>(AM.CreateSprite("boutonsettings"));
+	m_buttonSettings->SetScale(0.9, 0.9);
 
-	m_buttonExit = CreateEntity<Button>(AM.LoadSprite("boutonrexit"), sf::Color::Transparent);
-	m_buttonExit->SetSpriteScale(0.9, 0.9);
+	m_buttonExit = CreateEntity<Button>(AM.CreateSprite("boutonrexit"));
+	m_buttonExit->SetScale(0.9, 0.9);
 
 	if (m_buttonContinue)
 		m_buttonContinue->SetFunction([this]() { this->UnPause(); });

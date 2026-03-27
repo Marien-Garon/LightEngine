@@ -14,13 +14,13 @@
 void PauseScene::OnInitialize()
 {
 	AssetManager& AM = AssetManager::getInstance();
-	m_pauseMenu = CreateEntity<Entity>(AM.LoadSprite("pause"), sf::Color::Transparent);
-    m_pauseMenu->SetSpriteScale(0.67, 0.67);
+	m_pauseMenu = CreateEntity<Entity>(AM.CreateSprite("pause"));
+    m_pauseMenu->SetScale(0.67, 0.67);
 
-    m_buttonContinue = CreateEntity<Button>(AM.LoadSprite("boutoncontinue"), sf::Color::White);
-    m_buttonRestart = CreateEntity<Button>(AM.LoadSprite("boutonrestart"), sf::Color::White);
-    m_buttonSettings = CreateEntity<Button>(AM.LoadSprite("boutonsettings"), sf::Color::White);
-    m_buttonExit = CreateEntity<Button>(AM.LoadSprite("boutonrexit"), sf::Color::White);
+    m_buttonContinue = CreateEntity<Button>(AM.CreateSprite("boutoncontinue"));
+    m_buttonRestart = CreateEntity<Button>(AM.CreateSprite("boutonrestart"));
+    m_buttonSettings = CreateEntity<Button>(AM.CreateSprite("boutonsettings"));
+    m_buttonExit = CreateEntity<Button>(AM.CreateSprite("boutonrexit"));
 	
 }
 

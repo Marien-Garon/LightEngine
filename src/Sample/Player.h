@@ -71,6 +71,8 @@ private:
 	int m_directionFacing = 1; //1 = regarde vers la droite, -1 = regarde vers la gauche
 	int m_numberOfGoodPress = 0;
 
+	bool m_isJumping = false; // Delete that and the code go kaboom
+
 	float mAcceleration = 0.f;
 	float mDecceleration = 0.f;
 	float mBaseSpeed = 0.f;

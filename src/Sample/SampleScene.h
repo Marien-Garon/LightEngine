@@ -27,7 +27,6 @@ private:
 	float test_tempsEntreLesAttaque = 60 / test_BPMDeLaMusique; //temps entre chaque appuye en seconde
 	float test_timerAttaque = 0;
 	float m_pityFrames = 10.f;
-	bool mIsPaused = false;
 
 
 	Player* m_player;
@@ -38,14 +37,14 @@ private:
 	
 	std::vector<Hook*> m_hooks;
 private:
-	void TrySetSelectedEntity(Entity* pEntity, int x, int y);
+	//void TrySetSelectedEntity(Entity* pEntity, int x, int y);
 	
 public :
-	bool mIsPaused = false;
 	bool m_shouldRestart = false;
+	bool mIsPaused = false;
 private :
 
-	Entity* m_pauseMenu;
+	//Entity* m_pauseMenu;
 	Button* m_buttonContinue;
 	Button* m_buttonRestart;
 	Button* m_buttonSave;
@@ -53,12 +52,10 @@ private :
 	Button* m_buttonExit;
 
 public:
-	void OnInitialize() override;
-	void OnEvent(const sf::Event& event) override;
-	void OnUpdate() override;
 
 	sf::Vector2f m_playerStartPos = { 0.f,0.f };
-	PauseScene* m_pauseMenu;
+	//PauseScene* m_pauseMenu; ?
+	Entity* m_pauseMenu; // ???????
 
 public:
 
@@ -73,10 +70,7 @@ public:
 
 private:
 
-	std::vector<Hook*> m_hooks;
 	Parallaxe* m_parallaxe;
-	//Mob1* test;
-
 
 public:
 	std::vector<Hook*> GetHooks() { return m_hooks; };
